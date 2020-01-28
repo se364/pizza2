@@ -1,0 +1,175 @@
+<!-- http://tostrander.greenriverdev.com/305/pizza/
+
+1. Show a preview
+2. Starter template https://getbootstrap.com/docs/4.3/getting-started/introduction/
+3. Add a title and favicon
+4. Add a jumbotron, https://getbootstrap.com/docs/4.3/components/jumbotron/
+5. Add the form, https://getbootstrap.com/docs/4.3/components/forms/
+6. Style
+7. Add image
+8. Create confirmation page
+9. JS validation
+10. PHP validation
+
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="mystyles.css">
+
+    <title>Poppa's Pizza</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/jpeg" href="images/pizzaguy.jpeg">
+</head>
+<body>
+
+<div class="container" id="main">
+
+    <!--
+    <div class="jumbotron" id="title" >
+        <h1 class="display-3 text-center">Welcome to Poppa's Pizza</h1>
+    </div>
+    -->
+
+    <div class="jumbotron jumbotron-fluid" id="title">
+        <div class="container">
+            <h1 class="display-3">Poppa's Pizza</h1>
+            <p class="lead">We make great pizza.</p>
+        </div>
+    </div>
+
+    <img src="images/pizzaguy.jpeg" class="float-right" alt="Poppa">
+    <form id="pizzaform" method="post" action="confirm.php">
+
+        <!-- Contact Info -->
+        <fieldset class="form-group">
+
+            <legend>Contact Info</legend>
+
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="Enter first name" name="fname">
+            </div>
+
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter last name" name="lname">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea rows="5" cols="20" class="form-control" id="address" placeholder="Enter address" name="address"></textarea>
+            </div>
+
+        </fieldset>
+
+
+        <!-- Pickup or Delivery -->
+        <fieldset class="form-group">
+
+            <legend>Pickup or Delivery</legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="method" id="pickup" value="pickup" checked>
+                <label class="form-check-label" for="pickup">
+                    Pick-up
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="method" id="delivery" value="delivery">
+                <label class="form-check-label" for="delivery">
+                    Delivery
+                </label>
+            </div>
+
+        </fieldset>
+
+
+        <!-- Toppings -->
+        <fieldset class="form-group">
+
+            <legend>Toppings</legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="toppings[]" id="pepperoni" value="pepperoni">
+                <label class="form-check-label" for="pepperoni">Pepperoni</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="toppings[]" id="sausage" value="sausage">
+                <label class="form-check-label" for="sausage">Sausage</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="toppings[]" id="olives" value="olives">
+                <label class="form-check-label" for="olives">Olives</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="toppings[]" id="anchovies" value="anchovies">
+                <label class="form-check-label" for="anchovies">Anchovies</label>
+            </div>
+
+            <!-- Add two more toppings -->
+
+        </fieldset>
+
+
+        <!-- Crust -->
+        <fieldset class="form-group">
+
+            <legend>Crust Options</legend>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="crust" id="thin" value="thin" checked>
+                <label class="form-check-label" for="thin">
+                    Thin
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="crust" id="thick" value="thick">
+                <label class="form-check-label" for="delivery">
+                    Thick
+                </label>
+            </div>
+
+            <!-- Add one more crust (e.g. wheat, gluten-free) -->
+
+        </fieldset>
+
+
+        <!-- Size -->
+        <fieldset class="form-group">
+
+            <legend>Pizza Size</legend>
+            <label for="size">Pizza Size</label>
+            <select class="form-control" id="size">
+                <option value="none">Select a Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </fieldset>
+
+
+        <!-- Submit -->
+        <button id="submit" type="submit" class="btn btn-primary">Submit your Order</button>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="pizza.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+/* http://tina.greenrivertech.net/305/pizza/styles.css */
+
+body {
+    margin: 0 200px;
+    background-color: red;
+    /*font-size: 75%;
+    font-family: arial, sans-serif;*/
+}
+
+#main {
+    background-color: white;
+    height: 100%;
+    padding: 1em 5em 3em 5em;
+}
+
+fieldset {
+    /*margin-bottom: 1.5em;*/
+    border: 1px solid darkgreen;
+    padding: 1em;
+}
+
+legend {
+    color: darkgreen;
+    font-variant: small-caps;
+    /*font-weight: bold;
+    font-size: 125%;*/
+}
+
+#submit {
+
+    background-color: darkgreen;
+
+}
+
+#title {
+    background-color: darkgreen;
+    color: white;
+}
+
+.err {
+    visibility: hidden;
+    color: darkred;
+    padding-left: 0.3em;
+}
+
+img {
+    width: 50%;
+}
